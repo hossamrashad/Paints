@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=
+    , initial-scale=1.0"
+    />
+    <title>Document</title>
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <style></style>
+    <link rel="stylesheet" href="css/framework.css" />
+  </head>
+  <body>
+    <!-- Start popup -->
+    <span class="show-popup" data-popup=".sign-in">تسجيل الدخول</span>
+    <div class="popup">
+      <div class="inner">
+        <button class="close">close</button>
+      </div>
+    </div>
+    <!-- End popup -->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <!-- popper js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <!-- bootstrap js 4.3.1 -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="js/filter/mixitup.min.js"></script>
+    <script>
+      //var filterizd = $(".filter-container").filterizr();
+      //   $(".filter-container").filterizr();
+      //   var mixer = mixitup("#container");
+      //   $("#container").mixitup();
+    </script>
+    <script src="js/plugin-work.js"></script>
+    <script>
+      // popup
+      $(document).ready(function () {
+        "use strict";
+        $(".show-popup").click(function () {
+          $($(this).data("popup")).show();
+        });
+        $(".popup").click(function () {
+          $(this).hide();
+        });
+        $(".popup .inner").click(function (e) {
+          e.stopPropagation();
+        });
+        $(".popup .close").click(function (e) {
+          e.preventDefault();
+          $(this).parentsUntil(".popup").parent().hide();
+        });
+        $(document).keydown(function (e) {
+          if (e.keyCode == 27) {
+            $(".popup").hide();
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

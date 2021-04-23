@@ -1,0 +1,23 @@
+.fixed-menu-icon {
+  z-index: 99999;
+  position: relative;
+  i {
+    background-color: map-get($colors, 49);
+    color: map-get($colors, 1);
+    position: fixed;
+    right: 30px;
+    top: 100px;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    cursor: pointer;
+    z-index: 9999;
+    background-color: transparent;
+    @include transition(0.5s);
+    @include borderRadius(10px);
+    @include hover {
+      background-color: white;
+    }
+  }
+}
